@@ -1,0 +1,562 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Phudu:wght@300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Phudu:wght@300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&family=Sigmar&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    /* Prevents horizontal scroll */
+    overflow-x: hidden;
+    overflow-y: auto;   /* Enables vertical scroll */
+    background-color: black;
+
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.7rem;
+    
+    z-index: 10;
+    background-color: black;
+}
+
+nav div{
+    display: flex;
+    padding: 1rem;
+    gap:2em;
+    justify-content: end;
+   
+    
+}
+
+nav div a{
+    text-decoration: none;
+    font-size: 1.7rem;
+    white-space: none;
+   
+    font-family: "nunito";
+    z-index: 18;
+    
+}
+
+.header {
+    position: relative; /* Ensures smooth movement */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 5;
+    padding-top: 100px;
+    width: 100%;
+    overflow: hidden; /* Prevents unwanted scroll issues */
+    opacity: 1; /* Ensures fade-in works */
+}
+
+
+.header .h1{
+    
+    font-family: 'roboto', serif;
+    font-size: 22vw;
+   
+    color:lawngreen;
+    line-height: 1.125;
+    font-weight: 1000;
+    text-shadow: 3px 3px 1.5px white;
+    position: relative;  /* This allows the GSAP animation to move the elements */
+    opacity: 1;  /* Start with hidden opacity for the fade-in effect */
+    cursor: pointer;
+}
+
+.hero{
+    position: relative;
+    width:100%;
+    height:600px;
+    margin: 20px auto;
+    margin-bottom: 0px;
+    z-index:7 ;
+    
+    
+    
+    
+
+}
+
+.hero img{
+    width: 100%;
+    height: 100%;
+   z-index:7 ;
+  display:inline-block;
+    
+    background-size: contain;
+}
+
+.overlay{
+    position: fixed;
+   
+    width: 100vw;
+    height: 100vh;
+    z-index:20;
+    display: flex;
+    overflow: hidden;
+    
+}
+
+.bar{
+    width: 10vw;
+    height: 105vh;
+    background-color :rgb(123, 232, 15);
+    z-index: 20;
+
+    
+}
+
+
+
+.counter{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    z-index: 100;
+    color: black;
+    padding: 0.2em 0.4em;
+    font-size: 15vw;
+    font-family:  'Exo 2';
+    text-shadow: 3px 3px 5px white;
+   
+    overflow: hidden;
+    font-weight: 950;
+    
+
+}
+.happy a {
+    color: transparent;
+    transition: color 0.2s ease-in-out; /* Smooth color transition */
+    position: relative; /* Positioning for the underline effect */
+    font-size: 1.7rem;
+    font-family: "Nunito", sans-serif;
+}
+
+.happy a::after {
+    content: ""; /* Creates an empty pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with no underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: white; /* Underline color */
+    transition: width 0.3s ease; /* Smooth underline expansion */
+}
+
+.happy a.active {
+    color: lawngreen; /* Change to desired text color */
+    background-color: black;
+    padding: 0 5px;
+    white-space: nowrap;
+    
+}
+
+.happy a.active:hover {
+    color: white;
+    font-weight: bold;
+   
+}
+
+.happy a:hover::after {
+    width: 100%; /* Underline expands to full width on hover */
+}
+
+
+  #five{
+    color: rgb(19, 139, 3);
+    font-family:sans-serif;
+  }
+ 
+ 
+  .ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-left: -80px;
+    width: 14rem;
+    height: 3rem;
+    position: relative;
+    perspective: 1000px; /* Adds depth to the 3D effect */
+    margin: auto -30px;
+}
+
+.ico img {
+    height: 3rem;
+    width: 14rem;
+    object-fit: contain;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    transform-origin: center;
+}
+
+/* Apply 3D rotation on hover */
+.ico img:hover {
+    transform: rotateX(360deg); /* Rotate along the X-axis (horizontal axis) */
+   background-color:limegreen;
+  
+   background-image: linear-gradient(limegreen,yellowgreen);
+   
+}
+
+
+div.happy{
+    margin-right:150px ;
+
+}
+
+.header {
+    background-color: rgb(9, 9, 9);
+position:sticky;
+top:50px;
+
+}
+
+
+.awesome{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+ 
+   display: flex;
+   align-items: center;
+    
+    
+    
+ 
+    
+}
+
+
+
+.awesome .block{
+    width: 50%;
+
+
+    height: 50%;
+    
+
+   
+  
+   
+   
+}
+
+.awesome .block-1 img{
+    height: 100%;
+    width: 100%;
+
+
+  
+}
+
+.awesome .block-2 img{
+    height: 100%;
+    width: 100%;
+
+
+  
+}
+.awesome .block-3 img{
+    height: 100%;
+    width: 100%;
+
+
+  
+}
+.awesome .block-4 img{
+    height: 100%;
+    width: 100%;
+
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+
+
+}
+
+
+
+.contain h1{
+    width: 100%;
+    color: white;
+    font-size: 44vw;
+    font-weight: 800;
+    text-align: center;
+     letter-spacing: 50px;
+    margin-top: -800px;
+    margin: 0;
+    margin-bottom: 100px;
+
+
+    
+}
+
+.contain{
+    width: 100%;
+    height: 1200vh;
+    padding-top: 1000px;
+    
+    
+}
+
+
+
+
+.wrapper-404{
+    position: absolute;
+    top: 0;
+    width: 400vw;
+    height: 100vh;
+    will-change: transform;
+}
+
+.card{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+#card-1{
+    top:50%;
+    left: 20%;
+
+}
+
+#card-2{
+    top:25%;
+    left: 40%;
+
+}
+
+
+#card-3{
+    top:45%;
+    left: 60%;
+
+}
+
+#card-4{
+    top:15%;
+    left: 80%;
+
+}
+
+.outro{
+    position: absolute;
+    top: 150vh;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.outro h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:max-content;
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+
+
+.intro{
+    height: 450vh;
+    width: 100vw;
+    background-color: black;
+   
+  
+    font-size: 10em;
+    font-family: 'Bebas Neue';
+}
+
+.intro p{
+    text-align: center;
+    background-color:black;
+    margin-top: -270px;
+    z-index: -11111;
+    padding-left: 200px;
+    color:   lawngreen;
+
+    
+    
+}
+
+#skull{
+    height: 220px;
+    width: 220px;
+    margin-left: 20px;
+    background-color: lawngreen;
+    border-radius: 110px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#skull:hover{
+    height: 220px;
+    width: 220px;
+    margin-left: 20px;
+    background-color: lawngreen;
+    border-radius: 110px;
+   
+    border: 13px dashed darkgreen;
+}
+
+.hell1{
+    height:95vh;
+    width:100%;
+    background-color:black;
+
+}
+.hell3{
+    height:100vh;
+    width:100%;
+    background-color:black;
+    margin-top: -50px;
+   
+
+}
+
+.hell2{
+    height:100vh;
+    width:100%;
+    background-color:black;
+    margin-top: -100px;
+  
+  
+
+  
+  
+
+
+}
+.par1{
+    width: 47vw;
+    height: 100%;
+
+    background-color: lawngreen;
+    padding-bottom: 200px;
+    margin-bottom: -1000px;
+
+    
+}
+
+.hell4{
+    height:100vh;
+    width:100%;
+    background-color: lime;
+    margin-top: -100px;
+    border-radius: 7px;
+}
+
+
+
+.gojo {
+    width: 100%; /* Adjust as needed */
+     /* Adjust as needed */
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 200px;
+
+    
+}
+
+.gojo video {
+    width: 100%;
+    height: 90%;
+    display: block;
+    object-fit: cover;
+    
+}
+
+
+.filler{
+    background-color: black;
+    width: 100%;
+    height: 200px;
+}
+
+.trans{
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.innerpara{
+    font-size: 110px;
+}
+
+
+
+.k{
+
+font-size: 20px;
+
+
+
+
+
+}
+
+k{
+    color:white;
+}
+
+joker{
+    color: rgb(88, 86, 86);
+    text-shadow: 2px 2px 1px white;
+   
+    
+}
+
